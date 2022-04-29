@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h4 class="display-6 text-center">NoSql Injection</h4>
+
+    <form class="d-flex mt-4 mb-4" action="/books" method="get" style="width: 40%; margin: auto;">
+        <input class="form-control me-2" type="text" name="isbn" placeholder="ISBN" value="{{ isbn }}">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+
+    <table class="table mt-4" style="width: 60%; margin: auto;">
+        <thead>
+          <tr>
+            <th scope="col">ISBN</th>
+            <th scope="col">Title</th>
+            <th scope="col">Publisher</th>
+            <th scope="col">Published Date</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.ISBN }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.publisher_name }}</td>
+                    <td>{{ book.date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</div>
+{% endblock %}
