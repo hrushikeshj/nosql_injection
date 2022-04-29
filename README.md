@@ -1,2 +1,2 @@
 # NoSql Injection
-A simple flask app to show NoSql injection
+A simple flask app to demonstrate NoSql injection and solution
